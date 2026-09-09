@@ -1,0 +1,7 @@
+discord.py-self
+python-dotenv
+colorama
+CurrencyConverter
+simpleeval
+pytz
+llama-cpp-python
