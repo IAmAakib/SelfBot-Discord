@@ -28,8 +28,8 @@ Feature-rich Discord selfbot with local AI, TUI dashboard, and 60+ commands.
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-repo-url>
-cd SelfBot
+git clone https://github.com/IAmAakib/SelfBot-Discord
+cd SelfBot-Discord
 ```
 
 ### 2. Environment Setup
