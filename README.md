@@ -32,17 +32,7 @@ git clone <your-repo-url>
 cd SelfBot
 ```
 
-### 2. Install Dependencies
-
-Create a virtual environment (recommended) and install the required packages:
-
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
-pip install -r requirements.txt
-```
-
-### 3. Environment Setup
+### 2. Environment Setup
 
 Copy the example environment file:
 
@@ -56,7 +46,7 @@ Configure the following variables in `.env`:
 |---|---|---|
 | `DISCORD_TOKEN` | Your Discord user token | `Nzc2Mjk0...` |
 
-### 4. Configuration
+### 3. Configuration
 
 Edit `config.json` to customize the bot prefix:
 
@@ -66,17 +56,26 @@ Edit `config.json` to customize the bot prefix:
 }
 ```
 
-### 5. Start the Bot
+### 4. Start the Bot
 
-Start the bot using the provided script (which installs `uvloop` for better performance on Linux/macOS, and launches the interactive dashboard):
+The provided launcher scripts will automatically create a virtual environment, install dependencies, and start the bot.
 
+**Linux / macOS:**
 ```bash
 ./start.sh
+```
+
+**Windows:**
+```bat
+start.bat
 ```
 
 Or manually:
 
 ```bash
+python -m venv venv
+source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+pip install -r requirements.txt
 python main.py
 ```
 
