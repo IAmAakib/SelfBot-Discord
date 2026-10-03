@@ -1,0 +1,17 @@
+[project]
+name = "selfbot"
+version = "2.0.0"
+description = "Feature-rich Discord selfbot with local AI, TUI dashboard, and 60+ commands"
+requires-python = ">=3.10"
+readme = "README.md"
+license = {text = "MIT"}
+
+[project.scripts]
+selfbot = "main:main"
+
+[tool.ruff]
+target-version = "py310"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]

@@ -247,14 +247,9 @@ class AI(commands.Cog):
         if not self._llm:
             return
         # Ignore bot commands (messages starting with prefix)
-        import json
-        try:
-            with open('config.json', 'r') as f:
-                pfx = json.load(f).get('prefix', '.')
-            if message.content.startswith(pfx):
-                return
-        except Exception:
-            pass
+        from core.config_manager import config
+        if message.content.startswith(config.prefix):
+            return
         # Ignore empty messages
         if not message.content or not message.content.strip():
             return

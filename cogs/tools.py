@@ -300,13 +300,9 @@ class Tools(commands.Cog):
             # Don't delete the privacy command itself or system messages
             if message.content and not message.content.startswith(('**[', 'Privacy mode')):
                 # Read prefix to skip commands
-                try:
-                    with open('config.json', 'r') as f:
-                        pfx = json.load(f).get('prefix', '.')
-                    if message.content.startswith(pfx):
-                        return
-                except Exception:
-                    pass
+                from core.config_manager import config as cfg
+                if message.content.startswith(cfg.prefix):
+                    return
                 await asyncio.sleep(self._privacy_mode)
                 try:
                     await message.delete()

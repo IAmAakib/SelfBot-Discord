@@ -5,3 +5,7 @@ CurrencyConverter
 simpleeval
 pytz
 llama-cpp-python
+uvloop
+orjson
+rich
+aiohttp

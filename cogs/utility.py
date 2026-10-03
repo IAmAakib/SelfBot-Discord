@@ -167,15 +167,8 @@ class Utility(commands.Cog):
     @commands.command()
     async def prefix(self, ctx, new_prefix: str):
         """Change the bot's prefix."""
-        import json
-        with open('config.json', 'r') as f:
-            config = json.load(f)
-        
-        config['prefix'] = new_prefix
-        
-        with open('config.json', 'w') as f:
-            json.dump(config, f, indent=4)
-            
+        from core.config_manager import config
+        config.set('prefix', new_prefix)
         await ctx.send(f"Prefix changed to: `{new_prefix}`")
 
     # ------------------------------------------------------------------
